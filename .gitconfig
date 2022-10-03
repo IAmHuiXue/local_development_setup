@@ -1,0 +1,33 @@
+ [user]
+	email = iamhui@amazon.com
+	name = Hui Xue
+[core]
+	editor = code --wait
+	autocrlf = input
+	excludesfile = /Users/iamhui/.gitignore
+[init]
+	defaultBranch = main
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = "code --wait --diff  $LOCAL $REMOTE"
+# disable fast foward git merge
+# [merge]
+# 	ff = false
+ 
+# does not keep back up file for conlict 
+[mergetool]
+	keepBackup = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	lg = log --oneline --all --graph
+	unstage = restore --staged .
+	
+[merge]
+	tool = p4merge
+[mergetool "p4merge"]
+	path = /Applications/p4merge.app/Contents/MacOS/p4merge
