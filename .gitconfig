@@ -1,5 +1,5 @@
- [user]
-	email = iamhui@amazon.com
+[user]
+	email = <email>
 	name = Hui Xue
 
 # git repositories residing under this path are configured to my personal Github account
@@ -9,7 +9,7 @@
 [core]
 	editor = code --wait
 	autocrlf = input
-	excludesfile = /Users/iamhui/.gitignore
+	excludesfile = /Users/<user>/.gitignore
 [init]
 	defaultBranch = main
 [diff]
@@ -17,11 +17,11 @@
 [difftool "vscode"]
 	cmd = "code --wait --diff  $LOCAL $REMOTE"
 	
-# disable fast foward git merge
+# disable fast forward git merge
 # [merge]
 # 	ff = false
  
-# does not keep back up file for conlict 
+# does not keep back up file for conflict
 [mergetool]
 	keepBackup = false
 [filter "lfs"]
