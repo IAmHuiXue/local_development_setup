@@ -1,6 +1,11 @@
  [user]
 	email = iamhui@amazon.com
 	name = Hui Xue
+
+# git repositories residing under this path are configured to my personal Github account
+[includeIf "gitdir:~/Developer/personal/"]
+#   need to create a .gitconfig file under the path below for another user info
+	path = ~/Developer/personal/.gitconfig
 [core]
 	editor = code --wait
 	autocrlf = input
@@ -11,6 +16,7 @@
 	tool = vscode
 [difftool "vscode"]
 	cmd = "code --wait --diff  $LOCAL $REMOTE"
+	
 # disable fast foward git merge
 # [merge]
 # 	ff = false
@@ -26,8 +32,10 @@
 [alias]
 	lg = log --oneline --all --graph
 	unstage = restore --staged .
-	
 [merge]
 	tool = p4merge
 [mergetool "p4merge"]
 	path = /Applications/p4merge.app/Contents/MacOS/p4merge
+# to store the credential using osxkeychain on Mac
+[credential]
+	helper = osxkeychain
